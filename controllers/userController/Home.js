@@ -6,6 +6,7 @@ export const Home= async function(req, res) {
     const userId = token.token;
   
     res.json({ error: false, messages: messages.filter(i => i._id != userId)});
+   
 }
 
 
