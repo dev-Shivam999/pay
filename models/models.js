@@ -26,6 +26,7 @@ const balanceSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Message",
         required: true
+        
     },
     balance:{
         type:Number,
