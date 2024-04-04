@@ -12,22 +12,11 @@ export const app = express();
 
 app.use(cookieParser());
 app.use(express.json());
-// app.use(cors({
-//     origin:process.env.WEB,
-//     credentials:true,
-// }))
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+app.use(cors({
+    origin:process.env.WEB,
+    credentials:true,
+}))
 
-  // Allow preflight requests to pass without 403 error
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-}); 
 db()
 
 
