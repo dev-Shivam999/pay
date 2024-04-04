@@ -1,5 +1,4 @@
 import mongoose, { Mongoose } from "mongoose";
-import { array } from "zod";
 
 const messageSchema = new mongoose.Schema({
     name: {
@@ -17,7 +16,7 @@ const messageSchema = new mongoose.Schema({
         required: true
 
     }
-});
+},{ suppressReservedKeysWarning: true });
 
 
 
@@ -33,7 +32,7 @@ const balanceSchema = new mongoose.Schema({
         required: true
     },
   
-});
+},{ suppressReservedKeysWarning: true });
 
 const time =new mongoose.Schema({
    userId:{
@@ -46,7 +45,7 @@ const time =new mongoose.Schema({
         type:String,
         default:0
     }
-})
+},{ suppressReservedKeysWarning: true })
 const friendsSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -56,7 +55,7 @@ const friendsSchema = new mongoose.Schema({
   for: {
     type: [mongoose.Schema.Types.Object] // Assuming 'for' is an array of ObjectIds
   }
-});
+},{ suppressReservedKeysWarning: true });
 const saveSchema = new mongoose.Schema({
     userId:{
         type: mongoose.Schema.Types.ObjectId,
@@ -65,7 +64,7 @@ const saveSchema = new mongoose.Schema({
     save:{
         type: [mongoose.Schema.Types.Object]
     }
-})
+},{ suppressReservedKeysWarning: true })
 
 export const friend = mongoose.model("Friend", friendsSchema);
 
