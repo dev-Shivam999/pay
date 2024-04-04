@@ -3,10 +3,10 @@ import cookieParser from 'cookie-parser';
 import { db } from './db/db.js';
 import cors from 'cors'
 
-import dotenv from "dotenv"
+import dotenv, { config } from "dotenv"
 import router from './router/router.js';
 import balance from './router/blance.js';
-dotenv.config()
+
 
 export const app = express();
 
@@ -17,6 +17,9 @@ app.use(cors({
     credentials:true,
 }))
 
+
+config({ path: "./.env" })
+
 db()
 
 
@@ -26,7 +29,6 @@ app.use("/user",router)
 app.use("/bal",balance)
 
 
-// Start the server
 const PORT = 7852;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
