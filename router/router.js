@@ -37,7 +37,7 @@ router.post("/id",id);
 
 
 
-router.post("/friend", friendUser);
+router.post("/friend",isAuthenticated, friendUser);
 router.get("/lol",isAuthenticated, Lol);
 export default router;
 
