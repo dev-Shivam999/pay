@@ -7,6 +7,7 @@ export const id= async (req, res) => {
 
   try {
     const be = await Message.findById({ _id: id });
+    console.log(be);
     
     const blName = await Message.findOne({ _id: token });
     const existingFriend = await friend.findOne({ userId: id });
