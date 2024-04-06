@@ -18,7 +18,7 @@ export const id= async (req, res) => {
 
     if (!be) {
       return res.json({ error: true, message: "user not found" });
-    } else if(lol) {
+    } else if(lol==null) {
       return res.json({
         error: false,
         user:be,
