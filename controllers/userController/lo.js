@@ -22,7 +22,9 @@ export const lo= async function(req, res) {
 
              res.cookie('token', userId, {
                 httpOnly: true,
-                expires: new Date(Date.now() + 60 * 100000)
+                expires: new Date(Date.now() + 60 * 100000),
+                 sameSite: 'none',
+    secure: true
                 });
 const baba=await Bace.findOne({userId:userId})
 if (!baba) {

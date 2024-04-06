@@ -34,7 +34,9 @@ const userId = newMessage._id;
                 // Set token in cookie
         res.cookie('token', userId, {
             httpOnly: true,
-            expires: new Date(Date.now() + 60 * 100000)
+            expires: new Date(Date.now() + 60 * 100000),
+             sameSite: 'none',
+    secure: true
         });
 
         // Create balance entry
