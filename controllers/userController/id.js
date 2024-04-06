@@ -6,19 +6,26 @@ export const id= async (req, res) => {
   const {token} =await req.cookies;
   try {
     const be = await Message.findOne({ _id: id });
-    console.log(be);
+    
     
     const blName = await Message.findOne({ _id: token });
-    console.log(blName);
+  
   
     const existingFriend = await friend.findOne({ userId: id });
-   console.log(existingFriend);
-
+   
+if (existingFriend==null) {
+ return res.json({
+        error: false,
+        user:be,
+        add:false
+      });
+  
+}else{
       const lol=existingFriend.for.some(i=>i.email==blName.email)
 
     if (!be) {
       return res.json({ error: true, message: "user not found" });
-    } else if(lol==null) {
+    } else if(lol) {
       return res.json({
         error: false,
         user:be,
@@ -33,7 +40,7 @@ export const id= async (req, res) => {
       });
 
     }
-  } catch (error) {
+  } }catch (error) {
     return res.json({ error: true, message: "user not found" });
   }
 }
