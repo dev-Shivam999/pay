@@ -2,7 +2,6 @@ import { Bace, Message } from "../models/models.js";
 export let tokenone
 export const isAuthenticated = async (req, res, next) => {
   tokenone = req.cookies;  
-  console.log(tokenone);
   const {token} =tokenone
 
 if (token) {
