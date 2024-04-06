@@ -6,11 +6,13 @@ export const id= async (req, res) => {
   const {token} =await req.cookies;
   try {
     const be = await Message.findById({ _id: id });
+    console.log(be);
     
     const blName = await Message.findOne({ _id: token });
+    console.log(blName);
   
     const existingFriend = await friend.findOne({ userId: id });
-   
+   console.log(existingFriend);
 
       const lol=existingFriend.for.some(i=>i.email==blName.email)
 
