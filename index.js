@@ -13,7 +13,7 @@ export const app = express();
 config({ path: "./.env" })
 // origin:,
 app.use(cors({
-    origin:['http://localhost:5173','http://localhost:5174','https://lucky-torrone-f60888.netlify.app'],
+    origin:['http://localhost:5173','http://localhost:5174','https://pay-shiv.netlify.app'],
     credentials:true,
 }))
 app.use(cookieParser());
