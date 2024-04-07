@@ -2,8 +2,11 @@ import { save } from "../../models/models.js";
 
 export const sav=async(req, res)=>{
 
-    const{data}=req.body
+    const{dat,na}=req.body
    await save.find()
+   dat.name=na
+   const data=dat
+//    console.log(data);
    const {token}=req.cookies
     const validation=await save.findOne({userId:token})
    

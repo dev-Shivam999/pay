@@ -14,6 +14,10 @@ import { Lol } from "../controllers/userController/Lol.js";
 const router = express.Router();
 
 // Route to retrieve messages, requires authentication
+router.get('/first',isAuthenticated,(req,res)=>{
+res.json({error:false});
+
+});
 router.get("/home", isAuthenticated, Home);
 
 // Schema for signup validation

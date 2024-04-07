@@ -13,7 +13,7 @@ export const app = express();
 config({ path: "./.env" })
 // origin:,
 app.use(cors({
-    origin:['http://localhost:5173','http://localhost:5174'],
+    origin:['http://localhost:5173','http://localhost:5174','https://client-pay.onrender.com'],
     credentials:true,
 }))
 app.use(cookieParser());
