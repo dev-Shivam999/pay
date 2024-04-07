@@ -11,7 +11,7 @@ export const si= async (req, res) => {
 
         const validationResult = signupSchema.safeParse(req.body);
         if (!validationResult.success) {
-            return res.status(400).json({ error: true, message: validationResult.error.message });
+            return res.json({ error: true, message: validationResult.error.issues[0].message });
         }
 
         const existingUser = await Message.findOne({ email });
