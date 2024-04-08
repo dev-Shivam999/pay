@@ -13,7 +13,7 @@ export const app = express();
 config({ path: "./.env" })
 // origin:,
 app.use(cors({
-    origin:'https://harshita-gori.netlify.app',
+    origin:'*',
     credentials:true,
 }))
 app.use(cookieParser());
